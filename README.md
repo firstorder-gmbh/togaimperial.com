@@ -4,6 +4,7 @@
 
 # togaimperial.com
 [![Travis](https://img.shields.io/travis/firstorder-gmbh/togaimperial.com.svg)](https://travis-ci.org/firstorder-gmbh/togaimperial.com)
+[![CodeFactor](https://www.codefactor.io/repository/github/firstorder-gmbh/togaimperial.com/badge)](https://www.codefactor.io/repository/github/firstorder-gmbh/togaimperial.com)
 
 <em>TOGA, TOGA, TOGA!</em>
 
