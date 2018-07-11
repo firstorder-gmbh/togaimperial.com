@@ -14,7 +14,7 @@ node_js:
 # safelist
 branches:
   only:
-  - togaimperial.com
+  - master
 
 cache:
   directories:
@@ -41,6 +41,6 @@ after_success:
 #  provider: firebase
 #  skip_cleanup: true
 #  on:
-#    branch: togaimperial.com
+#    branch: master
 #  token:
 #    secure: $FIREBASE_TOKEN
