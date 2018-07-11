@@ -3,6 +3,7 @@
 </p>
 
 # togaimperial.com
+[![Travis](https://img.shields.io/travis/firstorder-gmbh/togaimperial.com.svg)](https://travis-ci.org/firstorder-gmbh/togaimperial.com)
 
 <em>TOGA, TOGA, TOGA!</em>
 
