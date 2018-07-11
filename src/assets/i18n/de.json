@@ -1,0 +1,19 @@
+{
+  "APP": {
+    "TITLE": "TOGA Imperial",
+    "ORGANIZATION": "TOGA Imperial UG (haftungsbeschränkt)",
+    "OWNER": "Nicoleta Stancu",
+    "ADDRESS_1": "Gabelsbergerstr. 87a",
+    "ADDRESS_2": "80333 München"
+  },
+  "IMPRINT": {
+    "TITLE": "Impressum",
+    "REGISTER_COURT": "Amtsgericht München",
+    "REGISTRATION_NO": "HRB 239144",
+    "TAX_ID": "DE317403340",
+    "TAX_NO": "143/186/91283"
+  },
+  "CHANGE_THEME": "Farbschema ändern",
+  "COPYRIGHT": "© 2018",
+  "HOME": "Startseite"
+}
