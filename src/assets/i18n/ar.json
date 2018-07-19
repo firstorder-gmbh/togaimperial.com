@@ -14,6 +14,9 @@
     "TAX_NO": "143/186/91283"
   },
   "CHANGE_THEME": "تغيير الألوان",
+  "SEARCH": {
+    "PLACEHOLDER": "بحث"
+  },
   "COPYRIGHT": "© 2018",
   "HOME": "الصفحة الرئيسية"
 }

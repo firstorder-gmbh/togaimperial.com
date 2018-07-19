@@ -13,6 +13,9 @@
     "TAX_ID": "DE317403340",
     "TAX_NO": "143/186/91283"
   },
+  "SEARCH": {
+    "PLACEHOLDER": "Search"
+  },
   "CHANGE_THEME": "Change Theme",
   "COPYRIGHT": "© 2018",
   "HOME": "Home"
