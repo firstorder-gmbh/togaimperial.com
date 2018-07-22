@@ -16,10 +16,10 @@
   "SHOP": {
     "TITLE": "Shop"
   },
-  "CHANGE_THEME": "Farbschema ändern",
   "SEARCH": {
     "PLACEHOLDER": "Suche"
   },
+  "CHANGE_THEME": "Farbschema ändern",
   "COPYRIGHT": "© 2018",
   "HOME": "Startseite"
 }
