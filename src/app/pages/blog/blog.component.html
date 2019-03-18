@@ -41,7 +41,7 @@
           <mat-card-content
               *ngIf="isOpen && (article.descriptions[currentLang] || article.descriptions['en']) as descriptions"
               class="description">
-            <p 
+            <p
                 *ngFor="let desc of descriptions | keyvalue"
                 [innerHTML]="desc.value"></p>
           </mat-card-content>
