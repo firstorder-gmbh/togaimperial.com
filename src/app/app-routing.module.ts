@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { BlogComponent } from './pages/blog/blog.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ImprintComponent } from './pages/imprint/imprint.component';
 import { ShopComponent } from './pages/shop/shop.component';
@@ -14,7 +15,9 @@ const routes: Routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
       { path: 'shop', redirectTo: 'shop/', pathMatch: 'full' },
-      { path: 'shop/:id', component: ShopComponent },
+      { path: 'shop/:_id', component: ShopComponent },
+      { path: 'blog', redirectTo: 'blog/', pathMatch: 'full' },
+      { path: 'blog/:_id', component: BlogComponent },
       { path: 'imprint', component: ImprintComponent }
     ]
   },

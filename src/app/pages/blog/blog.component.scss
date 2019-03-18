@@ -1,0 +1,191 @@
+.container {
+  @media (min-width: 600px) {
+    padding: 8px;
+  }
+}
+
+.section-articles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  // When one card is open hide the others
+  &.has-opened .card-container:not(.opened) {
+    // display: none;
+  }
+
+  .card-container {
+    display: inline-block;
+    margin: 16px;
+    vertical-align: top;
+
+    @media (min-width: 600px) {
+      width: 720px; // 16:9 ratio
+    }
+    .mat-card-avatar {
+      background-size: cover;
+    }
+    .mat-card-subtitle {
+      margin: 0;
+    }
+      
+    &:not(.opened) {
+      cursor: pointer;
+      .mat-card {
+        box-sizing: border-box;
+        height: 100%;
+        .mat-card-title {
+          font-size: 16px;
+        }
+      }
+      
+      @media (max-width: 599px) {
+        // List view, to be used when more products available for a more efficient list scrolling
+        /*  
+        margin: 0;
+        width: 100%;
+        .mat-card {
+          display: flex;
+          padding: 8px 16px;
+          .mat-card-image {
+            height: 56px; // 16:9 ratio
+            margin: 0 20px 0 -16px;
+            min-width: 100px;
+            width: 100px;
+            [dir=rtl] & {
+              margin: 0 -16px 0 20px;
+            }
+          }
+          .mat-card-title {
+            font-size: 16px;
+            margin: 8px 0 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        } */
+
+        // 1 column view, 32px gutters, 16px margins
+        width: calc(100vw - 32px);
+        .mat-card {
+          .mat-card-image {
+            height: calc((100vw - 32px) / 16 * 9); // 16:9 ratio
+            min-height: calc((100vw - 40px) / 16 * 9); // 16:9 ratio
+          }
+        }
+      }
+
+      @media (min-width: 600px) and (max-width: 767px) {
+        // 1 column view, 32px gutters, 24px margins
+        width: calc(100vw - 40px);
+        .mat-card-image {
+          height: calc((100vw - 40px) / 16 * 9); // 16:9 ratio
+          min-height: calc((100vw - 40px) / 16 * 9); // 16:9 ratio
+        }
+      }
+      @media (min-width: 768px) {
+        // flex colum view, fixed height and width
+        .mat-card-image {
+          height: 405px; // 16:9 ratio
+          margin-bottom: 20px;
+          min-height: 405px; // 16:9 ratio
+        }
+      }
+    }
+
+    &.opened {
+      align-items: center;
+      bottom: 0;
+      height: calc(100vh - 64px);
+      left: 0;
+      margin: 0;
+      overflow: auto;
+      position: fixed;
+      right: 0;
+      top: 64px;
+      @media (max-width: 599px) {
+        height: calc(100vh - 56px);
+        top: 56px;
+      }
+      width: 100%;
+      z-index: 3;
+      .mat-card {
+        border-radius: 0;
+        box-sizing: border-box;
+        min-height: 100%;
+        .article-toolbar {
+          left: 0;
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+        .cart-button {
+          text-transform: uppercase;
+        }
+        .description {
+          font-size: 16px;
+          line-height: 30px;
+          opacity: 0.75;
+          text-align: justify;
+        }
+        .mat-card-subtitle {
+          margin: 0 0 32px;
+        }
+        .mat-card-title {
+          line-height: 30px;
+        }
+        @media (max-width: 599px) {
+          padding: 16px;
+          padding-top: 56px;
+          .close-button {
+            margin-left: -8px;
+            [dir=rtl] & {
+              margin-left: 0;
+              margin-right: -8px;
+            }
+          }
+          .mat-card-image {
+            height: calc(100vw / 16 * 9);  // 16:9 ratio
+            margin: 0 -16px 16px;
+            min-height: calc(100vw / 16 * 9);  // 16:9 ratio
+            &:first-of-type {
+              margin-top: -56px;
+            }
+          }
+          .cart-button {
+            width: 100%;
+          }
+        }
+        @media (min-width: 600px) {
+          padding: 64px 24px 24px;
+          padding-top: 64px;
+          .mat-card-image {
+            //height: 337px; // 16:9 ratio
+            height: auto; // 16:9 ratio
+            margin: 0 -24px 24px;
+            min-height: 337px; // 16:9 ratio
+            width: 100vw; // was 600px
+            &:first-of-type {
+              margin-top: -40px;
+            }
+          }
+        }
+        @media (min-width: 1024px) {
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          .mat-card-content {
+            max-width: 1150px; // Same as on ff2
+          }
+          .mat-card-image {
+            height: auto;
+            margin: 0 0 32px;
+            width: 720px;
+            [dir=rtl] & {
+              margin: 0 0 0 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

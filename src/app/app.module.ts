@@ -1,7 +1,7 @@
-import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { AngularFireStorageModule } from 'angularfire2/storage';
-import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule, TransferState } from '@angular/platform-browser';
 import { CommonModule, LocationStrategy, PathLocationStrategy } from '@angular/common';
@@ -67,6 +67,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
 
 // Pages
+import { BlogComponent } from './pages/blog/blog.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ImprintComponent } from './pages/imprint/imprint.component';
 import { ShopComponent } from './pages/shop/shop.component';
@@ -77,14 +78,14 @@ import { FooterModule } from './shared/footer/footer.component';
 import { FooterService } from './shared/footer/footer.service';
 import { HeaderModule } from './shared/header/header.component';
 import { HeaderService } from './shared/header/header.service';
-import { LanguageService } from './shared/translate/language.service';
+import { LanguageService } from './shared/i18n/language.service';
 import { ProductService } from './shared/product/product.service';
 import { SidenavComponent } from './shared/sidenav/sidenav.component';
 import { SidenavService } from './shared/sidenav/sidenav.service';
 import { StyleManager } from './shared/style-manager/style-manager';
 import { ThemePickerModule } from './shared/theme-picker/theme-picker.component';
 import { ThemeStorage } from './shared/theme-picker/theme-storage/theme-storage';
-import { TranslateBrowserLoader } from './shared/translate/translate-browser-loader.service';
+import { TranslateBrowserLoader } from './shared/i18n/translate-browser-loader.service';
 
 // AoT requires an exported function for factories
 export function exportTranslateStaticLoader(http: HttpClient, transferState: TransferState): TranslateBrowserLoader {
@@ -156,14 +157,15 @@ export class MaterialModule { }
     HomeComponent,
     ImprintComponent,
     ShopComponent,
+    BlogComponent,
     SidenavComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: environment.firebase.projectId}),
-    AngularFireModule.initializeApp(environment.firebase, environment.firebase.projectId), // imports firebase/app needed for everything
-    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AngularFireModule.initializeApp(environment.firebase, environment.firebase.projectId), // imports firebase/app needed for everything
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AppRoutingModule,
     BrowserAnimationsModule,
     CommonModule,

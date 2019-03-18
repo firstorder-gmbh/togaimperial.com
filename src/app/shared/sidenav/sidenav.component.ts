@@ -5,7 +5,7 @@ import { Direction } from '@angular/cdk/bidi';
 import { MatSidenav } from '@angular/material';
 import { Router, RoutesRecognized } from '@angular/router';
 
-import { LanguageService } from '../translate/language.service';
+import { LanguageService } from './../i18n/language.service';
 import { SidenavService } from './sidenav.service';
 
 @Component({
@@ -28,6 +28,7 @@ export class SidenavComponent implements OnDestroy, OnInit {
   navList = [
     { class: 'home', icon: 'home', link: '/home', title: 'HOME' },
     { class: 'shop', icon: 'shop', link: '/shop', title: 'SHOP.TITLE' },
+    { class: 'blog', icon: 'library_books', link: '/blog', title: 'BLOG.TITLE' },
     { class: 'imprint', icon: '§', link: '/imprint', title: 'IMPRINT.TITLE' }
   ];
   selectedTitle: string;
@@ -38,7 +39,7 @@ export class SidenavComponent implements OnDestroy, OnInit {
       private router: Router,
       private sidenavService: SidenavService
   ) {
-    this.languageService.dir.subscribe(dir => {
+    this.languageService.dir$.subscribe(dir => {
       this.dir = dir;
     });
 
@@ -69,7 +70,7 @@ export class SidenavComponent implements OnDestroy, OnInit {
 
   ngOnDestroy(): void {
     // prevent memory leak when component destroyed
-    this.languageService.dir.unsubscribe();
+    this.languageService.dir$.unsubscribe();
   }
 
   ngOnInit(): void {

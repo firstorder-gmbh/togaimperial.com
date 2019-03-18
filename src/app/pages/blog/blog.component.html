@@ -1,0 +1,57 @@
+<div class="container mat-typography" [dir]="dir">
+  <section
+      class="section-articles"
+      [class.has-opened]="selectedArticle?._id">
+
+    <!-- Iterate articles -->
+    <ng-container *ngFor="let article of articles$ | async; trackBy: trackByArticles">
+
+      <!-- Declare isOpen variable if article is selected -->
+      <div
+          *ngFor="let isOpen of [article._id == selectedArticle?._id]"
+          class="card-container"
+          [class.opened]="isOpen">
+
+        <!-- Read default variant and make a card only if it exists -->
+        <mat-card class="product-card" (click)="openArticle(article)">
+
+          <!-- SHOW ALWAYS -->
+          <img
+              alt="{{ article.headlines[currentLang] || article.headlines['en'] }}"
+              mat-card-image
+              src="{{ article.assets[1] }}">
+
+          <mat-card-header>
+            <div
+                *ngIf="article.avatar"
+                mat-card-avatar
+                [ngStyle]="{'background-image':'url('+article.avatar+')'}"></div>
+
+            <mat-card-title
+                *ngIf="article.headlines[currentLang] || article.headlines['en'] as headline"
+                [innerHTML]="headline">
+            </mat-card-title>
+
+            <mat-card-subtitle
+                *ngIf="article.subtitles[currentLang] || article.subtitles['en'] as subtitle"
+                [innerHTML]="subtitle">
+            </mat-card-subtitle>
+          </mat-card-header>
+
+          <mat-card-content
+              *ngIf="isOpen && (article.descriptions[currentLang] || article.descriptions['en']) as descriptions"
+              class="description">
+            <p 
+                *ngFor="let desc of descriptions | keyvalue"
+                [innerHTML]="desc.value"></p>
+          </mat-card-content>
+
+          <img
+              *ngIf="isOpen && article.assets.length > 1" src="{{ article.assets[2] }}"
+              alt="{{ article.headlines[currentLang] || article.headlines['en'] }}"
+              mat-card-image>
+        </mat-card>
+      </div>
+    </ng-container>
+  </section>
+</div>

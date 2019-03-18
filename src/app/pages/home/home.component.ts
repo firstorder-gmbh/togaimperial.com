@@ -19,8 +19,8 @@ export class HomeComponent {
     .observe([Breakpoints.XSmall, Breakpoints.Small])
     .pipe(
       map(result => {
-        this.footerService.footerClass.next(result.matches ? null : 'transparent');
-        this.headerService.headerClass.next(result.matches ? null : 'transparent');
+        this.footerService.footerClass$.next(result.matches ? null : 'transparent');
+        this.headerService.headerClass$.next(result.matches ? null : 'transparent');
 
         return result.matches;
       })
@@ -39,10 +39,10 @@ export class HomeComponent {
     // loop=1 + paylist=${VIDEO_ID} Use together to loop the video
     // rel=0 Disable related videos
     // showinfo=0 Hide video title and uploader before the video starts
-    const VIDEO_ID = 'Q8TXgCzxEnw';
+    const VIDEO_ID = 'NEmWZYDp8KM';
     this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube-nocookie.com/embed/${VIDEO_ID}`
       + `?autoplay=1&controls=0&disablekb=1&loop=1&modestbranding=1&mute=1&playlist=${VIDEO_ID}&rel=0&showinfo=0`);
 
-    this.headerService.headerTitle.next('HOME');
+    this.headerService.headerTitle$.next('HOME');
   }
 }
