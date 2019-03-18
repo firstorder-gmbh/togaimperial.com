@@ -10,6 +10,7 @@ import { BehaviorSubject, combineLatest, of, Subject } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 
 import { Article } from './blog.model';
+import { FooterService } from './../../shared/footer/footer.service';
 import { HeaderService } from './../../shared/header/header.service';
 import { LanguageService } from './../../shared/i18n/language.service';
 
@@ -35,6 +36,7 @@ export class BlogComponent implements OnDestroy {
   constructor(
     protected angularFirestore: AngularFirestore,
     protected translate: TranslateService,
+    private footerService: FooterService,
     private headerService: HeaderService,
     private languageService: LanguageService,
     @Inject(PLATFORM_ID) private platformId: Object,
@@ -42,6 +44,8 @@ export class BlogComponent implements OnDestroy {
     private router: Router,
     private transferState: TransferState
   ) {
+    this.footerService.footerClass$.next(null);
+    this.headerService.headerClass$.next(null);
     this.headerService.headerTitle$.next('BLOG.TITLE');
 
     this.languageService.dir$.subscribe(dir => this.dir = dir);
