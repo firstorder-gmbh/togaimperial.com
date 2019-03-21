@@ -10,6 +10,7 @@
 @import './app/pages/home/home-theme';
 @import './app/pages/shop/shop-theme';
 @import './app/pages/blog/blog-theme';
+@import './app/pages/about/about-theme';
 @import './app/pages/imprint/imprint-theme';
 
 // Styles for the app that are based on the current theme.
@@ -33,6 +34,7 @@
 
   @include home-theme($theme);
   @include shop-theme($theme);
-  @include imprint-theme($theme);
   @include blog-theme($theme);
+  @include about-theme($theme);
+  @include imprint-theme($theme);
 }

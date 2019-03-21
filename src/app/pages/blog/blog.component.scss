@@ -9,9 +9,9 @@
   flex-wrap: wrap;
   justify-content: center;
   // When one card is open hide the others
-  &.has-opened .card-container:not(.opened) {
-    // display: none;
-  }
+  // &.has-opened .card-container:not(.opened) {
+  // display: none;
+  // }
 
   .card-container {
     display: inline-block;

@@ -1,3 +1,4 @@
+
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule } from '@angular/fire/storage';
@@ -67,6 +68,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
 
 // Pages
+import { AboutComponent } from './pages/about/about.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ImprintComponent } from './pages/imprint/imprint.component';
@@ -154,10 +156,11 @@ export class MaterialModule { }
 @NgModule({
   declarations: [
     AppComponent,
+    AboutComponent,
+    BlogComponent,
     HomeComponent,
     ImprintComponent,
     ShopComponent,
-    BlogComponent,
     SidenavComponent
   ],
   imports: [

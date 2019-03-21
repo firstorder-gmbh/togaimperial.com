@@ -29,6 +29,7 @@ export class SidenavComponent implements OnDestroy, OnInit {
     { class: 'home', icon: 'home', link: '/home', title: 'HOME' },
     { class: 'shop', icon: 'shop', link: '/shop', title: 'SHOP.TITLE' },
     { class: 'blog', icon: 'library_books', link: '/blog', title: 'BLOG.TITLE' },
+    { class: 'about', icon: 'business', link: '/about', title: 'ABOUT.TITLE' },
     { class: 'imprint', icon: '§', link: '/imprint', title: 'IMPRINT.TITLE' }
   ];
   selectedTitle: string;

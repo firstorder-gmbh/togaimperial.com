@@ -19,11 +19,14 @@
   "BLOG": {
     "TITLE": "مدونة"
   },
+  "ABOUT": {
+    "TITLE": "عننا"
+  },
   "SEARCH": {
     "PLACEHOLDER": "بحث"
   },
   "ADD_TO_CART": "أضف إلى السلة",
   "CHANGE_THEME": "تغيير الألوان",
-  "COPYRIGHT": "© 2018",
+  "COPYRIGHT": "© 2019",
   "HOME": "الصفحة الرئيسية"
 }
