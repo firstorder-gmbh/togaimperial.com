@@ -90,7 +90,7 @@
     "typescript": "3.2.4",
     "webpack": "4.29.6",
     "webpack-cli": "3.2.3",
-    "ws": "6.2.0",
+    "ws": "7.4.6",
     "xmlhttprequest": "1.8.0"
   }
 }
