@@ -78,7 +78,7 @@
     "karma-coverage-istanbul-reporter": "2.0.5",
     "karma-jasmine": "2.0.1",
     "karma-jasmine-html-reporter": "1.4.0",
-    "node-sass": "4.13.0",
+    "node-sass": "7.0.0",
     "pre-commit": "1.2.2",
     "protractor": "5.4.2",
     "reflect-metadata": "0.1.13",
